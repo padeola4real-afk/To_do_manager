@@ -43,6 +43,7 @@ def main():
                 break
         save_task(tasks)
         print()
+
         try_again_decision = get_input("Do you want to perform another action? [y / n]: ", ["y", "n"])
         if try_again_decision == "n":
             exit_application()
@@ -51,8 +52,6 @@ def main():
         print("Returning to home page......")
         time.sleep(2)
         os.system("clear")
-
-    print("write with Intent to Execute\nSee you soon")
 
 
 def add_task(tasks, last_id):
@@ -231,7 +230,7 @@ def load_task():
                 for id, task in saved_tasks.items():
                     if task["due_date"] is not None:
                         task["due_date"] = date.fromisoformat(task["due_date"]) 
-                            
+
                     task["added_date"] = date.fromisoformat(task["added_date"])
                     tasks[int(id)] = task
 

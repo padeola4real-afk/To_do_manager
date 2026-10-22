@@ -122,11 +122,10 @@ def get_description(text=None):
 
 
 def header_printer(text):
-
-    print("=" * 115)
-    padding = (115 - len(text)) // 2
-    print(" " * padding + text)
-    print("=" * 115)
+    width = 115
+    print("=" * width)
+    print(text.center(width))
+    print("=" * width)
     print()
 
 
